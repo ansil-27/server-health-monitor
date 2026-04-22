@@ -1,0 +1,14 @@
+# ============================================================
+# crontab — Scheduled Jobs for AutoOps Monitor
+# AutoOps Monitor | ASTRA DevOps Project
+# ============================================================
+# To install: run `crontab -e` and paste the lines below.
+# Replace /path/to/health-monitor with the actual full path
+# to your project folder (e.g. /home/student/health-monitor).
+# ============================================================
+
+# Run health checks every 5 minutes and append output to log
+*/5 * * * * /path/to/health-monitor/monitor.sh >> /path/to/health-monitor/logs/health.log 2>&1
+
+# Generate full HTML report every day at 8:00 AM
+0 8 * * * /path/to/health-monitor/monitor.sh --report

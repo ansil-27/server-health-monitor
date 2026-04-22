@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoOps Monitor — Health Report</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      min-height: 100vh;
+      padding: 30px 20px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #1f2937, #111827);
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    header h1 { font-size: 1.8rem; color: #58a6ff; letter-spacing: 1px; }
+    header h1 span { color: #f0f6fc; }
+    .meta { font-size: 0.85rem; color: #8b949e; text-align: right; }
+    .meta strong { color: #c9d1d9; }
+
+    /* ── Section card ── */
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+    .card h2 {
+      font-size: 1rem;
+      color: #8b949e;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid #30363d;
+      padding-bottom: 10px;
+    }
+
+    /* ── Results table ── */
+    table { width: 100%; border-collapse: collapse; }
+    th {
+      background: #0d1117;
+      color: #8b949e;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 2px solid #30363d;
+    }
+    td { padding: 14px 16px; border-bottom: 1px solid #21262d; font-size: 0.95rem; }
+    tr:last-child td { border-bottom: none; }
+
+    /* ── Row colouring ── */
+    tr.pass  td:first-child { border-left: 4px solid #3fb950; }
+    tr.alert td:first-child { border-left: 4px solid #f85149; }
+    tr.pass  { background: rgba(63,185,80,0.05); }
+    tr.alert { background: rgba(248,81,73,0.07); }
+    tr:hover { background: rgba(255,255,255,0.04); }
+
+    /* ── Status badges ── */
+    .badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .badge.pass  { background: #1a4731; color: #3fb950; border: 1px solid #3fb950; }
+    .badge.alert { background: #4a1515; color: #f85149; border: 1px solid #f85149; }
+
+    /* ── Log section ── */
+    .log-box {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 16px 18px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .log-line {
+      padding: 4px 0;
+      border-bottom: 1px solid #1c2128;
+      color: #8b949e;
+    }
+    .log-line:last-child { border-bottom: none; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      color: #484f58;
+      font-size: 0.78rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1>AutoOps <span>Monitor</span></h1>
+      <p style="color:#8b949e; font-size:0.85rem; margin-top:4px;">
+        Automated Server Health Report — ASTRA DevOps Track
+      </p>
+    </div>
+    <div class="meta">
+      <div>Generated: <strong>2026-04-22 06:08:29</strong></div>
+      <div>Host: <strong>DESKTOP-PUO1804</strong></div>
+    </div>
+  </header>
+
+  <!-- ── Results Table ── -->
+  <div class="card">
+    <h2>&#128200; Health Check Results</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Check</th>
+          <th>Current Value</th>
+          <th>Threshold</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pass">
+            <td>CPU</td>
+            <td>0%</td>
+            <td>80%</td>
+            <td><span class="badge pass">&#10003; PASS</span></td>
+        </tr><tr class="pass">
+            <td>Memory</td>
+            <td>22%</td>
+            <td>75%</td>
+            <td><span class="badge pass">&#10003; PASS</span></td>
+        </tr><tr class="pass">
+            <td>Disk</td>
+            <td>1%</td>
+            <td>90%</td>
+            <td><span class="badge pass">&#10003; PASS</span></td>
+        </tr><tr class="pass">
+            <td>Services</td>
+            <td>ssh:PASS,cron:PASS,nginx:PASS</td>
+            <td>N/A</td>
+            <td><span class="badge pass">&#10003; PASS</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Log Entries ── -->
+  <div class="card">
+    <h2>&#128196; Last 10 Log Entries</h2>
+    <div class="log-box">
+      <div class="log-line">[2026-04-22 06:07:59] DISK    | Usage: 1%  | Threshold: 90% | PASS</div>
+<div class="log-line">[2026-04-22 06:07:59] SERVICE | ssh: active | PASS</div>
+<div class="log-line">[2026-04-22 06:07:59] SERVICE | cron: active | PASS</div>
+<div class="log-line">[2026-04-22 06:07:59] SERVICE | nginx: active | PASS</div>
+<div class="log-line">[2026-04-22 06:08:28] CPU     | Usage: 0%  | Threshold: 80% | PASS</div>
+<div class="log-line">[2026-04-22 06:08:29] MEMORY  | Usage: 22%  | Threshold: 75% | PASS</div>
+<div class="log-line">[2026-04-22 06:08:29] DISK    | Usage: 1%  | Threshold: 90% | PASS</div>
+<div class="log-line">[2026-04-22 06:08:29] SERVICE | ssh: active | PASS</div>
+<div class="log-line">[2026-04-22 06:08:29] SERVICE | cron: active | PASS</div>
+<div class="log-line">[2026-04-22 06:08:29] SERVICE | nginx: active | PASS</div>
+    </div>
+  </div>
+
+  <footer>
+    AutoOps Monitor &nbsp;|&nbsp; ASTRA DevOps Engineering Track
+    &nbsp;|&nbsp; Report auto-generated by monitor.sh
+  </footer>
+
+</body>
+</html>

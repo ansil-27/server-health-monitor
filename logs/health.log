@@ -1,0 +1,42 @@
+[2026-04-22 05:27:24] CPU     | Usage: 0%  | Threshold: 80% | PASS
+[2026-04-22 05:27:25] MEMORY  | Usage: 21%  | Threshold: 75% | PASS
+[2026-04-22 05:27:25] DISK    | Usage: 1%  | Threshold: 90% | PASS
+[2026-04-22 05:27:25] SERVICE | ssh: active | PASS
+[2026-04-22 05:27:25] SERVICE | cron: active | PASS
+[2026-04-22 05:27:25] SERVICE | nginx: inactive/failed | ALERT
+[2026-04-22 05:28:59] CPU     | Usage: 0%  | Threshold: 80% | PASS
+[2026-04-22 05:29:00] MEMORY  | Usage: 22%  | Threshold: 75% | PASS
+[2026-04-22 05:29:00] DISK    | Usage: 1%  | Threshold: 90% | PASS
+[2026-04-22 05:29:00] SERVICE | ssh: active | PASS
+[2026-04-22 05:29:00] SERVICE | cron: active | PASS
+[2026-04-22 05:29:00] SERVICE | nginx: active | PASS
+[2026-04-22 05:29:44] CPU     | Usage: 0%  | Threshold: 80% | PASS
+[2026-04-22 05:29:45] MEMORY  | Usage: 22%  | Threshold: 75% | PASS
+[2026-04-22 05:29:45] DISK    | Usage: 1%  | Threshold: 90% | PASS
+[2026-04-22 05:29:45] SERVICE | ssh: active | PASS
+[2026-04-22 05:29:45] SERVICE | cron: active | PASS
+[2026-04-22 05:29:45] SERVICE | nginx: active | PASS
+[2026-04-22 05:51:57] CPU     | Usage: 0%  | Threshold: 80% | PASS
+[2026-04-22 05:51:58] MEMORY  | Usage: 22%  | Threshold: 75% | PASS
+[2026-04-22 05:51:58] DISK    | Usage: 1%  | Threshold: 90% | PASS
+[2026-04-22 05:51:58] SERVICE | ssh: active | PASS
+[2026-04-22 05:51:58] SERVICE | cron: active | PASS
+[2026-04-22 05:51:58] SERVICE | nginx: active | PASS
+[2026-04-22 06:01:42] CPU     | Usage: 0%  | Threshold: 80% | PASS
+[2026-04-22 06:01:43] MEMORY  | Usage: 22%  | Threshold: 75% | PASS
+[2026-04-22 06:01:44] DISK    | Usage: 1%  | Threshold: 90% | PASS
+[2026-04-22 06:01:44] SERVICE | ssh: active | PASS
+[2026-04-22 06:01:44] SERVICE | cron: active | PASS
+[2026-04-22 06:01:44] SERVICE | nginx: active | PASS
+[2026-04-22 06:07:58] CPU     | Usage: 0%  | Threshold: 80% | PASS
+[2026-04-22 06:07:59] MEMORY  | Usage: 22%  | Threshold: 75% | PASS
+[2026-04-22 06:07:59] DISK    | Usage: 1%  | Threshold: 90% | PASS
+[2026-04-22 06:07:59] SERVICE | ssh: active | PASS
+[2026-04-22 06:07:59] SERVICE | cron: active | PASS
+[2026-04-22 06:07:59] SERVICE | nginx: active | PASS
+[2026-04-22 06:08:28] CPU     | Usage: 0%  | Threshold: 80% | PASS
+[2026-04-22 06:08:29] MEMORY  | Usage: 22%  | Threshold: 75% | PASS
+[2026-04-22 06:08:29] DISK    | Usage: 1%  | Threshold: 90% | PASS
+[2026-04-22 06:08:29] SERVICE | ssh: active | PASS
+[2026-04-22 06:08:29] SERVICE | cron: active | PASS
+[2026-04-22 06:08:29] SERVICE | nginx: active | PASS
